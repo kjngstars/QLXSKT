@@ -35,8 +35,19 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +56,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -58,6 +71,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +94,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseAcessLayer\DatabaseAcessLayer.csproj">
+      <Project>{4523a0b0-8cb7-4e84-a702-0056f09cc933}</Project>
+      <Name>DatabaseAcessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hethong1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doiMatKhau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dangXuat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doiMatKhau.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thayDoiQD.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hoSo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_DaiLy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DangKyVe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phieuNhanVe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PhieuTraVe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanhToan %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kehoach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phanPhoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghinhan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\traCuu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tinhTrangTieuTHu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bao cao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bar Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huongDanSudung.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongtinsanpham.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
