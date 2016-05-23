@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripTaiKhoan = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarControlLeft = new DevExpress.XtraNavBar.NavBarControl();
             this.nbgHeThong = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbgiDangNhap = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgiDangXuat = new DevExpress.XtraNavBar.NavBarItem();
@@ -114,12 +113,12 @@
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.panelControl_Main = new DevExpress.XtraEditors.PanelControl();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControlLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl_Main)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -151,18 +150,12 @@
             this.toolStripTaiKhoan.Size = new System.Drawing.Size(98, 17);
             this.toolStripTaiKhoan.Text = "Chưa Đăng Nhập";
             // 
-            // panelControl1
+            // navBarControlLeft
             // 
-            this.panelControl1.Controls.Add(this.navBarControl1);
-            this.panelControl1.Location = new System.Drawing.Point(0, 95);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(203, 396);
-            this.panelControl1.TabIndex = 6;
-            // 
-            // navBarControl1
-            // 
-            this.navBarControl1.ActiveGroup = this.nbgHeThong;
-            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarControlLeft.ActiveGroup = this.nbgHeThong;
+            this.navBarControlLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.navBarControlLeft.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.nbgHeThong,
             this.nbgQuanLyDaiLy,
             this.nbgQuanLyVe,
@@ -170,7 +163,7 @@
             this.nbgQuanLyXoSo,
             this.nbgBaoCao,
             this.nbgTroGiup});
-            this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.navBarControlLeft.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.nbgiDangNhap,
             this.nbgiDangXuat,
             this.nbgiDoiMatKhau,
@@ -192,13 +185,12 @@
             this.nbgiBaoCaoLoiNhuan,
             this.nbgiHuongDanSuDung,
             this.nbgiThongTinSanPham});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 74);
-            this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 192;
-            this.navBarControl1.Size = new System.Drawing.Size(192, 452);
-            this.navBarControl1.TabIndex = 7;
-            this.navBarControl1.TabStop = true;
-            this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
+            this.navBarControlLeft.Location = new System.Drawing.Point(0, 141);
+            this.navBarControlLeft.Name = "navBarControlLeft";
+            this.navBarControlLeft.OptionsNavPane.ExpandedWidth = 192;
+            this.navBarControlLeft.Size = new System.Drawing.Size(192, 360);
+            this.navBarControlLeft.TabIndex = 7;
+            this.navBarControlLeft.TabStop = true;
             // 
             // nbgHeThong
             // 
@@ -371,6 +363,9 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.None;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -407,7 +402,7 @@
             this.ribbonPage5,
             this.ribbonPage6,
             this.ribbonPage7});
-            this.ribbonControl1.Size = new System.Drawing.Size(899, 139);
+            this.ribbonControl1.Size = new System.Drawing.Size(899, 140);
             // 
             // barbtnDangNhap
             // 
@@ -751,29 +746,39 @@
             this.ribbonPageGroup21.ItemLinks.Add(this.barbtnThongTinSP);
             this.ribbonPageGroup21.Name = "ribbonPageGroup21";
             // 
-            // defaultLookAndFeel1
+            // defaultLookAndFeel
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Aqua;
-            this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.defaultLookAndFeel.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.defaultLookAndFeel.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.defaultLookAndFeel.LookAndFeel.SkinName = "Office 2013";
             // 
-            // Form1
+            // panelControl_Main
+            // 
+            this.panelControl_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl_Main.Location = new System.Drawing.Point(193, 141);
+            this.panelControl_Main.Name = "panelControl_Main";
+            this.panelControl_Main.Size = new System.Drawing.Size(706, 360);
+            this.panelControl_Main.TabIndex = 9;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 526);
+            this.Controls.Add(this.panelControl_Main);
+            this.Controls.Add(this.navBarControlLeft);
             this.Controls.Add(this.ribbonControl1);
-            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.statusStrip1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "MainForm";
+            this.Text = "Quản Lý Xổ Só";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControlLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl_Main)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,8 +789,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripTaiKhoan;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        private DevExpress.XtraNavBar.NavBarControl navBarControlLeft;
         private DevExpress.XtraNavBar.NavBarGroup nbgHeThong;
         private DevExpress.XtraNavBar.NavBarItem nbgiDangNhap;
         private DevExpress.XtraNavBar.NavBarItem nbgiDangXuat;
@@ -817,7 +821,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
         private DevExpress.XtraBars.BarButtonItem barbtnDangNhap;
         private DevExpress.XtraBars.BarButtonItem barbtnDangXuat;
         private DevExpress.XtraBars.BarButtonItem barbtnDoiMK;
@@ -866,6 +870,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;
         private DevExpress.XtraBars.BarButtonItem barbtnTraCuuKQ;
+        private DevExpress.XtraEditors.PanelControl panelControl_Main;
     }
 }
 
