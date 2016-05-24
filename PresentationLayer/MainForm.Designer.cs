@@ -70,9 +70,9 @@
             this.ribbonPage_TroGiup = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.panelControl_Main = new DevExpress.XtraEditors.PanelControl();
+            this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl_Main)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -200,6 +200,7 @@
             this.barButtonItem_DanhSachLoaiVe.Id = 12;
             this.barButtonItem_DanhSachLoaiVe.LargeGlyph = global::PresentationLayer.Properties.Resources.DanhSachLoaiVe;
             this.barButtonItem_DanhSachLoaiVe.Name = "barButtonItem_DanhSachLoaiVe";
+            this.barButtonItem_DanhSachLoaiVe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_DanhSachLoaiVe_ItemClick);
             // 
             // barButtonItem_ThemLoaiVe
             // 
@@ -221,7 +222,6 @@
             this.barButtonItem_ThemCCGT.Id = 15;
             this.barButtonItem_ThemCCGT.LargeGlyph = global::PresentationLayer.Properties.Resources.ThemCCGT;
             this.barButtonItem_ThemCCGT.Name = "barButtonItem_ThemCCGT";
-            this.barButtonItem_ThemCCGT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem_KeHoachPhatHanh
             // 
@@ -391,28 +391,24 @@
             // 
             this.defaultLookAndFeel.LookAndFeel.SkinName = "Office 2013";
             // 
-            // panelControl_Main
+            // xtraTabbedMdiManager
             // 
-            this.panelControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl_Main.Location = new System.Drawing.Point(0, 147);
-            this.panelControl_Main.Name = "panelControl_Main";
-            this.panelControl_Main.Size = new System.Drawing.Size(798, 429);
-            this.panelControl_Main.TabIndex = 2;
+            this.xtraTabbedMdiManager.MdiParent = this;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 599);
-            this.Controls.Add(this.panelControl_Main);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản Lý Xổ Số";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl_Main)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,7 +421,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup_TaiKhoan;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
-        private DevExpress.XtraEditors.PanelControl panelControl_Main;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_DangNhap;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_DangXuat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_DoiMatKhau;
@@ -461,5 +456,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem_TraCuuKQXS;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage_BaoCao;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage_TroGiup;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager;
     }
 }
