@@ -122,7 +122,7 @@ namespace PresentationLayer.Dialog
             {
                 try
                 {
-                    LoaiVe loaiVe = new LoaiVe(
+                    this.loaiVe = new LoaiVe(
                         string.Empty,
                         this.textEdit_TenLoaiVe.Text,
                         this.dateEdit_NgayLap.Text,
@@ -130,11 +130,34 @@ namespace PresentationLayer.Dialog
                         ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
                         this.comboBoxEdit_MaCCGT.Text);
 
-                    this.loaiVeBUS.Insert(loaiVe);
+                    this.loaiVeBUS.Insert(this.loaiVe);
 
                     this.DialogResult = DialogResult.OK;
 
                     XtraMessageBox.Show("Thêm Thành Công");
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                try
+                {
+                    this.loaiVe = new LoaiVe(
+                        this.loaiVe.MaLoaiVe,
+                        this.textEdit_TenLoaiVe.Text,
+                        this.dateEdit_NgayLap.Text,
+                        decimal.Parse(this.textEdit_MenhGia.Text),
+                        ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
+                        this.comboBoxEdit_MaCCGT.Text);
+
+                    this.loaiVeBUS.Update(this.loaiVe);
+
+                    this.DialogResult = DialogResult.OK;
+
+                    XtraMessageBox.Show("Cập Nhật Thành Công");
                 }
                 catch (Exception ex)
                 {

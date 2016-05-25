@@ -37,6 +37,20 @@ namespace BusinessLogicLayer
             this.loaiVeDAL.Insert(parameter);
         }
 
+        public void Update(LoaiVe loaiVe)
+        {
+            string[] parameter = new string[5];
+
+            parameter[0] = loaiVe.MaLoaiVe;
+            parameter[1] = loaiVe.TenLoaiVe;
+            parameter[2] = loaiVe.NgayLap;
+            parameter[3] = loaiVe.MenhGia.ToString();
+            parameter[4] = loaiVe.MaDoiTac;
+            parameter[5] = loaiVe.MaCoCauGiaiThuong;
+
+            this.loaiVeDAL.Update(parameter);
+        }
+
         public LoaiVe GetLoaiVe_ByMaLoaiVe(string maLoaiVe)
         {
             DataRow dataRow = this.loaiVeDAL.GetLoaiVe_ByMaLoaiVe(maLoaiVe);

@@ -43,6 +43,28 @@ namespace DatabaseAcessLayer
             connection.Close();
         }
 
+        public void Update(string[] parameter)
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.connection;
+            cmd.CommandText = "LOAIVE_UPDATE";
+
+            cmd.Parameters.Add("@p_MALOAIVE", parameter[0]);
+            cmd.Parameters.Add("@p_TENLOAIVE", parameter[1]);
+            cmd.Parameters.Add("@p_NGAYLAP", parameter[2]);
+            cmd.Parameters.Add("@p_MENHGIA", parameter[3]);
+            cmd.Parameters.Add("@p_MADOITAC", parameter[4]);
+            cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", parameter[5]);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
         public DataRow GetLoaiVe_ByMaLoaiVe(string maLoaiVe)
         {
             if (connection.State != ConnectionState.Open)
