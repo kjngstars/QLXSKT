@@ -25,6 +25,11 @@ namespace PresentationLayer
         private void FormDanhSachLoaiVe_Load(object sender, EventArgs e)
         {
             this.loaiVeBUS = new LoaiVeBUS();
+        }
+
+        private void FormDanhSachLoaiVe_Shown(object sender, EventArgs e)
+        {
+            this.gridControl.DataSource = this.loaiVeBUS.GetAll();
 
             this.gridView.Columns[0].Caption = "Mã Loại Vé";
             this.gridView.Columns[1].Caption = "Tên Loại Vé";
@@ -34,23 +39,25 @@ namespace PresentationLayer
             this.gridView.Columns[5].Caption = "Mã Cơ Cấu Giải Thưởng";
         }
 
-        private void FormDanhSachLoaiVe_Shown(object sender, EventArgs e)
-        {
-            this.gridControl.DataSource = this.loaiVeBUS.GetAll();
-        }
-
         private void toolStripMenuItem_Them_Click(object sender, EventArgs e)
         {
             FormEditLoaiVe form = new FormEditLoaiVe();
-            form.ShowDialog(this);
+            form.ShowDialog();
             this.gridControl.DataSource = this.loaiVeBUS.GetAll();
         }
 
-        private void gridView_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void gridView_DoubleClick(object sender, EventArgs e)
         {
-            FormEditLoaiVe form = new FormEditLoaiVe();
-            form.ShowDialog(this);
-            this.gridControl.DataSource = this.loaiVeBUS.GetAll();
+            int[] selectedRows = this.gridView.GetSelectedRows();
+
+            if (selectedRows.Length > 0)
+            {
+                string maLoaiVe = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
+
+                FormEditLoaiVe form = new FormEditLoaiVe(maLoaiVe);
+                form.ShowDialog();
+                this.gridControl.DataSource = this.loaiVeBUS.GetAll();
+            }
         }
     }
 }

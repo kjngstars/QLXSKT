@@ -42,5 +42,34 @@ namespace DatabaseAcessLayer
 
             connection.Close();
         }
+
+        public DataRow GetLoaiVe_ByMaLoaiVe(string maLoaiVe)
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            DataTable dataTable = new DataTable();
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.connection;
+            cmd.CommandText = "LOAIVE_SEARCHBYMALOAIVE";
+
+            cmd.Parameters.Add("@p_MALOAIVE", maLoaiVe);
+
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
+
+            adapter.Fill(dataTable);
+
+            connection.Close();
+
+            if (dataTable.Rows.Count > 0)
+                return dataTable.Rows[0];
+            else
+                return null;
+        }
     }
 }

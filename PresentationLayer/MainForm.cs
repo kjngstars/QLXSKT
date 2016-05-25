@@ -49,7 +49,7 @@ namespace PresentationLayer
         private void barButtonItem_ThemLoaiVe_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormEditLoaiVe form = new FormEditLoaiVe();
-            form.ShowDialog(this);
+            form.ShowDialog();
         }
     }
 }

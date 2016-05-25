@@ -14,7 +14,7 @@ namespace PresentationLayer.Dialog
 {
     public partial class FormEditLoaiVe : DevExpress.XtraEditors.XtraForm
     {
-        private bool isEdit = false;
+        private LoaiVe loaiVe = null;
         private LoaiVeBUS loaiVeBUS = null;
         private DoiTacBUS doiTacBUS = null;
         private CoCauGiaiThuongBUS coCauGiaiThuongBUS = null;
@@ -22,16 +22,34 @@ namespace PresentationLayer.Dialog
         public FormEditLoaiVe()
         {
             InitializeComponent();
-        }
-
-        private void FormEditLoaiVe_Load(object sender, EventArgs e)
-        {
-            if (!this.isEdit)
-                this.dateEdit_NgayLap.EditValue = DateTime.Now;
 
             this.loaiVeBUS = new LoaiVeBUS();
             this.doiTacBUS = new DoiTacBUS();
             this.coCauGiaiThuongBUS = new CoCauGiaiThuongBUS();
+        }
+
+        public FormEditLoaiVe(string maLoaiVe)
+        {
+            InitializeComponent();
+
+            this.loaiVeBUS = new LoaiVeBUS();
+            this.doiTacBUS = new DoiTacBUS();
+            this.coCauGiaiThuongBUS = new CoCauGiaiThuongBUS();
+
+            try
+            {
+                this.loaiVe = this.loaiVeBUS.GetLoaiVe_ByMaLoaiVe(maLoaiVe);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormEditLoaiVe_Load(object sender, EventArgs e)
+        {
+            if (this.loaiVe == null)
+                this.dateEdit_NgayLap.EditValue = DateTime.Now;
 
             this.Fill_CTPhatHanh();
             this.Fill_MaCCGT();
@@ -51,7 +69,17 @@ namespace PresentationLayer.Dialog
                 this.comboBoxEdit_CTPhatHanh.Properties.Items.Add(doiTac);
             }
 
-            this.comboBoxEdit_CTPhatHanh.SelectedIndex = 0;
+            if (this.loaiVe == null)
+                this.comboBoxEdit_CTPhatHanh.SelectedIndex = 0;
+            else
+            {
+                for (int i = 0; i < this.comboBoxEdit_CTPhatHanh.Properties.Items.Count; i++)
+                    if (((DoiTac)this.comboBoxEdit_CTPhatHanh.Properties.Items[i]).MaDoiTac == this.loaiVe.MaDoiTac)
+                    {
+                        this.comboBoxEdit_CTPhatHanh.SelectedIndex = i;
+                        break;
+                    }
+            }
         }
 
         private void Fill_MaCCGT()
@@ -65,13 +93,23 @@ namespace PresentationLayer.Dialog
                 this.comboBoxEdit_MaCCGT.Properties.Items.Add(coCauGiaiThuong);
             }
 
-            if (!this.isEdit && dataTable.Rows.Count > 0)
+            if (this.loaiVe == null)
                 this.comboBoxEdit_MaCCGT.SelectedIndex = 0;
+            else
+            {
+                for (int i = 0; i < this.comboBoxEdit_MaCCGT.Properties.Items.Count; i++)
+                    if (((CoCauGiaiThuong)this.comboBoxEdit_MaCCGT.Properties.Items[i]).MaCoCauGiaiThuong == this.loaiVe.MaCoCauGiaiThuong)
+                    {
+                        this.comboBoxEdit_MaCCGT.SelectedIndex = i;
+                        break;
+                    }
+            }
+            
         }
 
         private void simpleButton_OK_Click(object sender, EventArgs e)
         {
-            if (!this.isEdit)
+            if (this.loaiVe == null)
             {
                 try
                 {
