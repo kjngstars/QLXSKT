@@ -32,7 +32,7 @@
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem_Them = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_Sua = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_CapNhat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_Xoa = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -56,28 +56,29 @@
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_Them,
-            this.toolStripMenuItem_Sua,
+            this.toolStripMenuItem_CapNhat,
             this.toolStripMenuItem_Xoa});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(106, 70);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 92);
             // 
             // toolStripMenuItem_Them
             // 
             this.toolStripMenuItem_Them.Name = "toolStripMenuItem_Them";
-            this.toolStripMenuItem_Them.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem_Them.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_Them.Text = "Thêm";
             this.toolStripMenuItem_Them.Click += new System.EventHandler(this.toolStripMenuItem_Them_Click);
             // 
-            // toolStripMenuItem_Sua
+            // toolStripMenuItem_CapNhat
             // 
-            this.toolStripMenuItem_Sua.Name = "toolStripMenuItem_Sua";
-            this.toolStripMenuItem_Sua.Size = new System.Drawing.Size(105, 22);
-            this.toolStripMenuItem_Sua.Text = "Sửa";
+            this.toolStripMenuItem_CapNhat.Name = "toolStripMenuItem_CapNhat";
+            this.toolStripMenuItem_CapNhat.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_CapNhat.Text = "Cập Nhật";
+            this.toolStripMenuItem_CapNhat.Click += new System.EventHandler(this.toolStripMenuItem_CapNhat_Click);
             // 
             // toolStripMenuItem_Xoa
             // 
             this.toolStripMenuItem_Xoa.Name = "toolStripMenuItem_Xoa";
-            this.toolStripMenuItem_Xoa.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem_Xoa.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_Xoa.Text = "Xóa";
             // 
             // gridView
@@ -110,7 +111,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Them;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Sua;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_CapNhat;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Xoa;
     }
 }

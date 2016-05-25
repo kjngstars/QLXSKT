@@ -46,6 +46,24 @@ namespace PresentationLayer
             this.gridControl.DataSource = this.loaiVeBUS.GetAll();
         }
 
+
+        private void toolStripMenuItem_CapNhat_Click(object sender, EventArgs e)
+        {
+            int[] selectedRows = this.gridView.GetSelectedRows();
+
+            if (selectedRows.Length > 0)
+            {
+                string maLoaiVe = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
+
+                FormEditLoaiVe form = new FormEditLoaiVe(maLoaiVe);
+                if (form.DialogResult != DialogResult.Abort)
+                {
+                    form.ShowDialog();
+                    this.gridControl.DataSource = this.loaiVeBUS.GetAll();
+                }
+            }
+        }
+
         private void gridView_DoubleClick(object sender, EventArgs e)
         {
             int[] selectedRows = this.gridView.GetSelectedRows();

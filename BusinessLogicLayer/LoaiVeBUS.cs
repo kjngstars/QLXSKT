@@ -39,7 +39,7 @@ namespace BusinessLogicLayer
 
         public void Update(LoaiVe loaiVe)
         {
-            string[] parameter = new string[5];
+            string[] parameter = new string[6];
 
             parameter[0] = loaiVe.MaLoaiVe;
             parameter[1] = loaiVe.TenLoaiVe;
