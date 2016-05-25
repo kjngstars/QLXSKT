@@ -42,6 +42,8 @@ namespace PresentationLayer.Dialog
             }
             catch (Exception ex)
             {
+                this.DialogResult = DialogResult.Abort;
+
                 XtraMessageBox.Show(ex.Message);
             }
         }
@@ -50,6 +52,12 @@ namespace PresentationLayer.Dialog
         {
             if (this.loaiVe == null)
                 this.dateEdit_NgayLap.EditValue = DateTime.Now;
+            else
+            {
+                this.textEdit_TenLoaiVe.Text = this.loaiVe.TenLoaiVe;
+                this.dateEdit_NgayLap.EditValue = this.loaiVe.NgayLap;
+                this.textEdit_MenhGia.Text = ((int)this.loaiVe.MenhGia).ToString();
+            }
 
             this.Fill_CTPhatHanh();
             this.Fill_MaCCGT();
@@ -69,7 +77,8 @@ namespace PresentationLayer.Dialog
                 this.comboBoxEdit_CTPhatHanh.Properties.Items.Add(doiTac);
             }
 
-            if (this.loaiVe == null)
+            if (this.loaiVe == null ||
+                this.loaiVe.MaDoiTac == string.Empty)
                 this.comboBoxEdit_CTPhatHanh.SelectedIndex = 0;
             else
             {
@@ -104,7 +113,7 @@ namespace PresentationLayer.Dialog
                         break;
                     }
             }
-            
+
         }
 
         private void simpleButton_OK_Click(object sender, EventArgs e)
@@ -124,7 +133,6 @@ namespace PresentationLayer.Dialog
                     this.loaiVeBUS.Insert(loaiVe);
 
                     this.DialogResult = DialogResult.OK;
-                    this.Owner = null;
 
                     XtraMessageBox.Show("Thêm Thành Công");
                 }
@@ -138,7 +146,6 @@ namespace PresentationLayer.Dialog
         private void simpleButton_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            this.Owner = null;
         }
     }
 }

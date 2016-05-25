@@ -55,8 +55,11 @@ namespace PresentationLayer
                 string maLoaiVe = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
 
                 FormEditLoaiVe form = new FormEditLoaiVe(maLoaiVe);
-                form.ShowDialog();
-                this.gridControl.DataSource = this.loaiVeBUS.GetAll();
+                if (form.DialogResult != DialogResult.Abort)
+                {
+                    form.ShowDialog();
+                    this.gridControl.DataSource = this.loaiVeBUS.GetAll();
+                }
             }
         }
     }
