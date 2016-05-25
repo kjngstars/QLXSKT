@@ -208,6 +208,7 @@
             this.barButtonItem_ThemLoaiVe.Id = 13;
             this.barButtonItem_ThemLoaiVe.LargeGlyph = global::PresentationLayer.Properties.Resources.ThemLoaiVe;
             this.barButtonItem_ThemLoaiVe.Name = "barButtonItem_ThemLoaiVe";
+            this.barButtonItem_ThemLoaiVe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_ThemLoaiVe_ItemClick);
             // 
             // barButtonItem_DanhSachCCGT
             // 

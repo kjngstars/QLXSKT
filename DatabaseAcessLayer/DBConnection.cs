@@ -18,7 +18,7 @@ namespace DatabaseAcessLayer
             {
                 connection = new SqlConnection();
                 connection.ConnectionString = //@"Data Source=.\;Initial Catalog=QLSTK;Integrated Security=True";
-                @"Data Source=.\;Initial Catalog=QLSTK;Integrated Security=True";
+                @"Data Source=.\;Initial Catalog=QUANLYXOSO;Integrated Security=True";
                 //@"Data Source=KIUKIU;Initial Catalog=QLSTK;Integrated Security=True"
             }
             catch (Exception)

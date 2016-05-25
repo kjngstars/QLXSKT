@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\FormEditLoaiVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FormEditLoaiVe.Designer.cs">
+      <DependentUpon>FormEditLoaiVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhSachLoaiVe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\FormEditLoaiVe.resx">
+      <DependentUpon>FormEditLoaiVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachLoaiVe.resx">
       <DependentUpon>FormDanhSachLoaiVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TraCuuKQXS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{5b895c70-e63d-4b46-ab5d-6726dceb0f19}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
