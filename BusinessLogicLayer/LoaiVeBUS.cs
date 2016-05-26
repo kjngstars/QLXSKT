@@ -55,13 +55,7 @@ namespace BusinessLogicLayer
         {
             DataRow dataRow = this.loaiVeDAL.GetLoaiVeByMaLoaiVe(maLoaiVe);
 
-            return new LoaiVe(
-                dataRow["MALOAIVE"].ToString(),
-                dataRow["TENLOAIVE"].ToString(),
-                dataRow["NGAYLAP"].ToString(),
-                decimal.Parse(dataRow["MENHGIA"].ToString()),
-                dataRow["MADOITAC"].ToString(),
-                dataRow["MACOCAUGIAITHUONG"].ToString());
+            return new LoaiVe(dataRow);
         }
     }
 }

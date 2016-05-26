@@ -19,6 +19,9 @@ namespace PresentationLayer.Dialogs
         private DoiTacBUS doiTacBUS = null;
         private CoCauGiaiThuongBUS coCauGiaiThuongBUS = null;
 
+        /// <summary>
+        /// Khởi tạo để thêm loại vé
+        /// </summary>
         public FormEditLoaiVe()
         {
             InitializeComponent();
@@ -28,6 +31,9 @@ namespace PresentationLayer.Dialogs
             this.coCauGiaiThuongBUS = new CoCauGiaiThuongBUS();
         }
 
+        /// <summary>
+        /// Khởi tạo để cập nhật loại vé
+        /// </summary>
         public FormEditLoaiVe(string maLoaiVe)
         {
             InitializeComponent();
@@ -51,16 +57,30 @@ namespace PresentationLayer.Dialogs
         private void FormEditLoaiVe_Load(object sender, EventArgs e)
         {
             if (this.loaiVe == null)
-                this.dateEdit_NgayLap.EditValue = DateTime.Now;
+                this.InsertLoad();
             else
-            {
-                this.textEdit_TenLoaiVe.Text = this.loaiVe.TenLoaiVe;
-                this.dateEdit_NgayLap.EditValue = this.loaiVe.NgayLap;
-                this.textEdit_MenhGia.Text = ((int)this.loaiVe.MenhGia).ToString();
-            }
+                this.EditLoad();
 
             this.FillCTPhatHanh();
             this.FillMaCCGT();
+        }
+
+        /// <summary>
+        /// Hàm load để thêm loại vé
+        /// </summary>
+        public void InsertLoad()
+        {
+            this.dateEdit_NgayLap.EditValue = DateTime.Now;
+        }
+
+        /// <summary>
+        /// Hàm load để cập nhật loại vé
+        /// </summary>
+        public void EditLoad()
+        {
+            this.textEdit_TenLoaiVe.Text = this.loaiVe.TenLoaiVe;
+            this.dateEdit_NgayLap.EditValue = this.loaiVe.NgayLap;
+            this.textEdit_MenhGia.Text = ((int)this.loaiVe.MenhGia).ToString();
         }
 
         private void FillCTPhatHanh()
@@ -119,58 +139,70 @@ namespace PresentationLayer.Dialogs
         private void simpleButton_OK_Click(object sender, EventArgs e)
         {
             if (this.loaiVe == null)
-            {
-                try
-                {
-                    this.loaiVe = new LoaiVe(
-                        string.Empty,
-                        this.textEdit_TenLoaiVe.Text,
-                        this.dateEdit_NgayLap.Text,
-                        decimal.Parse(this.textEdit_MenhGia.Text),
-                        ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
-                        this.comboBoxEdit_MaCCGT.Text);
-
-                    this.loaiVe.MaLoaiVe = this.loaiVeBUS.Insert(this.loaiVe);
-
-                    this.DialogResult = DialogResult.OK;
-
-                    XtraMessageBox.Show("Thêm Thành Công");
-                }
-                catch (Exception ex)
-                {
-                    this.loaiVe = null;
-
-                    XtraMessageBox.Show(ex.Message);
-                }
-            }
+                this.InsertGiaiThuong();
             else
-            {
-                try
-                {
-                    this.loaiVe = new LoaiVe(
-                        this.loaiVe.MaLoaiVe,
-                        this.textEdit_TenLoaiVe.Text,
-                        this.dateEdit_NgayLap.Text,
-                        decimal.Parse(this.textEdit_MenhGia.Text),
-                        ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
-                        this.comboBoxEdit_MaCCGT.Text);
-
-                    this.loaiVeBUS.Update(this.loaiVe);
-
-                    this.DialogResult = DialogResult.OK;
-
-                    XtraMessageBox.Show("Cập Nhật Thành Công");
-                }
-                catch (Exception ex)
-                {
-                    XtraMessageBox.Show(ex.Message);
-                }
-            }
+                this.UpdateGiaiThuong();
         }
 
         private void simpleButton_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        /// <summary>
+        /// Thêm loại vé
+        /// </summary>
+        public void InsertGiaiThuong()
+        {
+            try
+            {
+                this.loaiVe = new LoaiVe(
+                    string.Empty,
+                    this.textEdit_TenLoaiVe.Text,
+                    this.dateEdit_NgayLap.Text,
+                    decimal.Parse(this.textEdit_MenhGia.Text),
+                    ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
+                    this.comboBoxEdit_MaCCGT.Text);
+
+                this.loaiVe.MaLoaiVe = this.loaiVeBUS.Insert(this.loaiVe);
+
+                this.DialogResult = DialogResult.OK;
+
+                XtraMessageBox.Show("Thêm Thành Công");
+            }
+            catch (Exception ex)
+            {
+                this.loaiVe = null;
+
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Cập nhật loại vé
+        /// </summary>
+        public void UpdateGiaiThuong()
+        {
+            try
+            {
+                this.loaiVe = new LoaiVe(
+                    this.loaiVe.MaLoaiVe,
+                    this.textEdit_TenLoaiVe.Text,
+                    this.dateEdit_NgayLap.Text,
+                    decimal.Parse(this.textEdit_MenhGia.Text),
+                    ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
+                    this.comboBoxEdit_MaCCGT.Text);
+
+                this.loaiVeBUS.Update(this.loaiVe);
+
+                this.DialogResult = DialogResult.OK;
+
+                XtraMessageBox.Show("Cập Nhật Thành Công");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
     }
 }

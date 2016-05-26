@@ -39,10 +39,38 @@ namespace BusinessLogicLayer
             this.MaGiaiThuong = row["MAGIAITHUONG"].ToString();
             this.TenGiaiThuong = row["TENGIAITHUONG"].ToString();
             this.MaCoCauGiaiThuong = row["MACOCAUGIAITHUONG"].ToString();
-            this.TriGia = decimal.Parse(row["TRIGIA"].ToString());
-            this.SoLuong = int.Parse(row["SOLUONG"].ToString());
-            this.SoChuSoTrung = int.Parse(row["SOCHUSOTRUNG"].ToString());
-            this.SoLanQuay = int.Parse(row["SOLANQUAY"].ToString());
+            try
+            {
+                this.TriGia = decimal.Parse(row["TRIGIA"].ToString());
+            }
+            catch (Exception ex)
+            {
+                this.TriGia = 0;
+            }
+            try
+            {
+                this.SoLuong = int.Parse(row["SOLUONG"].ToString());
+            }
+            catch (Exception ex)
+            {
+                this.SoLuong = 0;
+            }
+            try
+            {
+                this.SoChuSoTrung = int.Parse(row["SOCHUSOTRUNG"].ToString());
+            }
+            catch (Exception ex)
+            {
+                this.SoChuSoTrung = 0;
+            }
+            try
+            {
+                this.SoLanQuay = int.Parse(row["SOLANQUAY"].ToString());
+            }
+            catch (Exception ex)
+            {
+                this.SoLanQuay = 0;
+            }
         }
     }
 }

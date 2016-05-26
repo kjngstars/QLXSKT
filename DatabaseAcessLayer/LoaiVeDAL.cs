@@ -17,7 +17,7 @@ namespace DatabaseAcessLayer
             string query = @"SELECT MALOAIVE, TENLOAIVE, NGAYLAP, MENHGIA, TENDOITAC, MACOCAUGIAITHUONG
                             FROM LOAIVE AS loaive
                             LEFT JOIN DOITAC AS doitac
-                            ON loaive.MADOITAC=doitac.MADOITAC";
+                            ON loaive.MADOITAC = doitac.MADOITAC";
 
             return this.getTable(query, string.Empty);
         }

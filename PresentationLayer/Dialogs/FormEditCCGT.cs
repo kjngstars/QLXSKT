@@ -63,7 +63,7 @@ namespace PresentationLayer.Dialogs
         }
 
         /// <summary>
-        /// Hàm Load để thêm CCGT
+        /// Hàm load để thêm CCGT
         /// </summary>
         public void InsertLoad()
         {
@@ -82,7 +82,7 @@ namespace PresentationLayer.Dialogs
         }
 
         /// <summary>
-        /// Hàm Load để cập nhật CCGT
+        /// Hàm load để cập nhật CCGT
         /// </summary>
         public void EditLoad()
         {

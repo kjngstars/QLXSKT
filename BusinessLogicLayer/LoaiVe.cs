@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,23 @@ namespace BusinessLogicLayer
             this.MenhGia = MenhGia;
             this.MaDoiTac = MaDoiTac;
             this.MaCoCauGiaiThuong = MaCoCauGiaiThuong;
+        }
+
+        public LoaiVe(DataRow row)
+        {
+            this.MaLoaiVe = row["MALOAIVE"].ToString();
+            this.TenLoaiVe = row["TENLOAIVE"].ToString();
+            this.NgayLap = row["NGAYLAP"].ToString();
+            try
+            {
+                this.MenhGia = decimal.Parse(row["MENHGIA"].ToString());
+            }
+            catch (Exception ex)
+            {
+                this.MenhGia = 0;
+            }
+            this.MaDoiTac = row["MADOITAC"].ToString();
+            this.MaCoCauGiaiThuong = row["MACOCAUGIAITHUONG"].ToString();
         }
     }
 }

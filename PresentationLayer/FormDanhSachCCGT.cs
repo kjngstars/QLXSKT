@@ -40,11 +40,9 @@ namespace PresentationLayer
 
         private void toolStripMenuItem_CapNhat_Click(object sender, EventArgs e)
         {
-            int[] selectedRows = this.gridView.GetSelectedRows();
-
-            if (selectedRows.Length > 0)
+            if (this.gridView.FocusedRowHandle >= 0)
             {
-                string maCoCauGiaiThuong = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
+                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)[0].ToString();
 
                 FormEditCCGT form = new FormEditCCGT(maCoCauGiaiThuong);
                 if (form.DialogResult != DialogResult.Abort)
@@ -57,11 +55,9 @@ namespace PresentationLayer
 
         private void gridControl_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            int[] selectedRows = this.gridView.GetSelectedRows();
-
-            if (selectedRows.Length > 0)
+            if (this.gridView.FocusedRowHandle >= 0)
             {
-                string maCoCauGiaiThuong = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
+                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)[0].ToString();
 
                 FormEditCCGT form = new FormEditCCGT(maCoCauGiaiThuong);
                 if (form.DialogResult != DialogResult.Abort)

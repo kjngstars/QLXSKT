@@ -36,11 +36,11 @@
             this.toolStripMenuItem_Xoa = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MALOAIVE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENLOAIVE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MENHGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENDOITAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MACOCAUGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENLOAIVE = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -110,14 +110,6 @@
             this.MALOAIVE.Visible = true;
             this.MALOAIVE.VisibleIndex = 0;
             // 
-            // TENLOAIVE
-            // 
-            this.TENLOAIVE.Caption = "Tên Loại Vé";
-            this.TENLOAIVE.FieldName = "TENLOAIVE ";
-            this.TENLOAIVE.Name = "TENLOAIVE";
-            this.TENLOAIVE.Visible = true;
-            this.TENLOAIVE.VisibleIndex = 1;
-            // 
             // NGAYLAP
             // 
             this.NGAYLAP.Caption = "Ngày Lập";
@@ -129,6 +121,8 @@
             // MENHGIA
             // 
             this.MENHGIA.Caption = "Mệnh Giá";
+            this.MENHGIA.DisplayFormat.FormatString = "c0";
+            this.MENHGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.MENHGIA.FieldName = "MENHGIA";
             this.MENHGIA.Name = "MENHGIA";
             this.MENHGIA.Visible = true;
@@ -149,6 +143,14 @@
             this.MACOCAUGIAITHUONG.Name = "MACOCAUGIAITHUONG";
             this.MACOCAUGIAITHUONG.Visible = true;
             this.MACOCAUGIAITHUONG.VisibleIndex = 5;
+            // 
+            // TENLOAIVE
+            // 
+            this.TENLOAIVE.Caption = "Tên Loại Vé";
+            this.TENLOAIVE.FieldName = "TENLOAIVE";
+            this.TENLOAIVE.Name = "TENLOAIVE";
+            this.TENLOAIVE.Visible = true;
+            this.TENLOAIVE.VisibleIndex = 1;
             // 
             // FormDanhSachLoaiVe
             // 
@@ -176,10 +178,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_CapNhat;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Xoa;
         private DevExpress.XtraGrid.Columns.GridColumn MALOAIVE;
-        private DevExpress.XtraGrid.Columns.GridColumn TENLOAIVE;
         private DevExpress.XtraGrid.Columns.GridColumn NGAYLAP;
         private DevExpress.XtraGrid.Columns.GridColumn MENHGIA;
         private DevExpress.XtraGrid.Columns.GridColumn TENDOITAC;
         private DevExpress.XtraGrid.Columns.GridColumn MACOCAUGIAITHUONG;
+        private DevExpress.XtraGrid.Columns.GridColumn TENLOAIVE;
     }
 }
