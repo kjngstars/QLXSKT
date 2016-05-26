@@ -11,7 +11,7 @@ namespace DatabaseAcessLayer
     {
         public DoiTacDAL() : base() { }
 
-        public DataTable GetAll_CT()
+        public DataTable GetAllCT()
         {
             string query = @"SELECT * FROM DOITAC
                             WHERE MADOITAC LIKE 'CT%'";

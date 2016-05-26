@@ -41,7 +41,6 @@ namespace DatabaseAcessLayer
             cmd.Parameters.Add("@p_MADOITAC", parameter[3]);
             cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", parameter[4]);
 
-
             cmd.ExecuteNonQuery();
 
             connection.Close();
@@ -71,7 +70,7 @@ namespace DatabaseAcessLayer
             connection.Close();
         }
 
-        public DataRow GetLoaiVe_ByMaLoaiVe(string maLoaiVe)
+        public DataRow GetLoaiVeByMaLoaiVe(string maLoaiVe)
         {
             if (connection.State != ConnectionState.Open)
                 connection.Open();

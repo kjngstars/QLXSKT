@@ -40,8 +40,10 @@
             this.simpleButton_OK = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MAGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit_TenGiaiThuong = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.MACOCAUGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TRIGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit_TriGia = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.SOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,8 +52,6 @@
             this.repositoryItemTextEdit_SoChuSoTrung = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.SOLANQUAY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit_SoLanQuay = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.MAGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MACOCAUGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit.CalendarTimeProperties)).BeginInit();
@@ -129,6 +129,7 @@
             // 
             this.ribbonPageGroup_CCGT.ItemLinks.Add(this.barEditItem_NgayLap);
             this.ribbonPageGroup_CCGT.Name = "ribbonPageGroup_CCGT";
+            this.ribbonPageGroup_CCGT.ShowCaptionButton = false;
             this.ribbonPageGroup_CCGT.Text = "Cơ Cấu Giải Thưởng";
             // 
             // ribbonPageGroup_GiaiThuong
@@ -136,6 +137,7 @@
             this.ribbonPageGroup_GiaiThuong.ItemLinks.Add(this.barButtonItem_Them);
             this.ribbonPageGroup_GiaiThuong.ItemLinks.Add(this.barButtonItem_Xoa);
             this.ribbonPageGroup_GiaiThuong.Name = "ribbonPageGroup_GiaiThuong";
+            this.ribbonPageGroup_GiaiThuong.ShowCaptionButton = false;
             this.ribbonPageGroup_GiaiThuong.Text = "Giải Thưởng";
             // 
             // simpleButton_Cancel
@@ -173,7 +175,7 @@
             this.repositoryItemTextEdit_SoLuong,
             this.repositoryItemTextEdit_SoChuSoTrung,
             this.repositoryItemTextEdit_SoLanQuay});
-            this.gridControl.Size = new System.Drawing.Size(784, 364);
+            this.gridControl.Size = new System.Drawing.Size(784, 363);
             this.gridControl.TabIndex = 16;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -183,8 +185,8 @@
             this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MAGIAITHUONG,
             this.TENGIAITHUONG,
-            this.TRIGIA,
             this.MACOCAUGIAITHUONG,
+            this.TRIGIA,
             this.SOLUONG,
             this.SOCHUSOTRUNG,
             this.SOLANQUAY});
@@ -192,6 +194,12 @@
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView.OptionsView.ShowGroupPanel = false;
+            // 
+            // MAGIAITHUONG
+            // 
+            this.MAGIAITHUONG.Caption = "Mã Giải Thưởng";
+            this.MAGIAITHUONG.FieldName = "MAGIAITHUONG";
+            this.MAGIAITHUONG.Name = "MAGIAITHUONG";
             // 
             // TENGIAITHUONG
             // 
@@ -208,6 +216,12 @@
             this.repositoryItemTextEdit_TenGiaiThuong.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit_TenGiaiThuong.MaxLength = 500;
             this.repositoryItemTextEdit_TenGiaiThuong.Name = "repositoryItemTextEdit_TenGiaiThuong";
+            // 
+            // MACOCAUGIAITHUONG
+            // 
+            this.MACOCAUGIAITHUONG.Caption = "Mã Cơ Cấu Giải Thưởng";
+            this.MACOCAUGIAITHUONG.FieldName = "MACOCAUGIAITHUONG";
+            this.MACOCAUGIAITHUONG.Name = "MACOCAUGIAITHUONG";
             // 
             // TRIGIA
             // 
@@ -228,6 +242,7 @@
             this.repositoryItemTextEdit_TriGia.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit_TriGia.MaxLength = 10;
             this.repositoryItemTextEdit_TriGia.Name = "repositoryItemTextEdit_TriGia";
+            this.repositoryItemTextEdit_TriGia.NullText = "0";
             // 
             // SOLUONG
             // 
@@ -246,6 +261,7 @@
             this.repositoryItemTextEdit_SoLuong.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit_SoLuong.MaxLength = 10;
             this.repositoryItemTextEdit_SoLuong.Name = "repositoryItemTextEdit_SoLuong";
+            this.repositoryItemTextEdit_SoLuong.NullText = "0";
             // 
             // SOCHUSOTRUNG
             // 
@@ -264,6 +280,7 @@
             this.repositoryItemTextEdit_SoChuSoTrung.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit_SoChuSoTrung.MaxLength = 10;
             this.repositoryItemTextEdit_SoChuSoTrung.Name = "repositoryItemTextEdit_SoChuSoTrung";
+            this.repositoryItemTextEdit_SoChuSoTrung.NullText = "0";
             // 
             // SOLANQUAY
             // 
@@ -281,18 +298,7 @@
             this.repositoryItemTextEdit_SoLanQuay.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.repositoryItemTextEdit_SoLanQuay.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit_SoLanQuay.Name = "repositoryItemTextEdit_SoLanQuay";
-            // 
-            // MAGIAITHUONG
-            // 
-            this.MAGIAITHUONG.Caption = "Mã Giải Thưởng";
-            this.MAGIAITHUONG.FieldName = "MAGIAITHUONG";
-            this.MAGIAITHUONG.Name = "MAGIAITHUONG";
-            // 
-            // MACOCAUGIAITHUONG
-            // 
-            this.MACOCAUGIAITHUONG.Caption = "Mã Cơ Cấu Giải Thưởng";
-            this.MACOCAUGIAITHUONG.FieldName = "MACOCAUGIAITHUONG";
-            this.MACOCAUGIAITHUONG.Name = "MACOCAUGIAITHUONG";
+            this.repositoryItemTextEdit_SoLanQuay.NullText = "0";
             // 
             // FormEditCCGT
             // 

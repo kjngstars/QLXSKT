@@ -204,6 +204,12 @@
   <ItemGroup>
     <None Include="Resources\Delete.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Procedure\COCAUGIAITHUONG_PROCEDURE.sql" />
+    <Content Include="Procedure\GIAITHUONG_PROCEDURE.sql" />
+    <Content Include="Procedure\LOAIVE_PROCEDURE.sql" />
+    <Content Include="Procedure\PROCEDURE.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

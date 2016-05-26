@@ -26,5 +26,24 @@ namespace BusinessLogicLayer
         {
             return this.coCauGiaiThuongDAL.Insert(coCauGiaiThuong.NgayLap);
         }
+
+        public void Update(CoCauGiaiThuong coCauGiaiThuong)
+        {
+            string[] parameter = new string[2];
+
+            parameter[0] = coCauGiaiThuong.MaCoCauGiaiThuong;
+            parameter[1] = coCauGiaiThuong.NgayLap;
+
+            this.coCauGiaiThuongDAL.Update(parameter);
+        }
+
+        public CoCauGiaiThuong GetCoCauGiaiThuongByMaCoCauGiaiThuong(string maCoCauGiaiThuong)
+        {
+            DataRow dataRow = this.coCauGiaiThuongDAL.GetByMaCoCauGiaiThuong(maCoCauGiaiThuong);
+
+            return new CoCauGiaiThuong(
+                dataRow["MACOCAUGIAITHUONG"].ToString(),
+                dataRow["NGAYLAP"].ToString());
+        }
     }
 }

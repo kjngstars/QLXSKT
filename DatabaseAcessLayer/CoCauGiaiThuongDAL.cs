@@ -39,5 +39,52 @@ namespace DatabaseAcessLayer
 
             return cmd.Parameters["@p_MACOCAUGIAITHUONG"].Value.ToString();
         }
+
+        public void Update(string[] parameter)
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.connection;
+            cmd.CommandText = @"COCAUGIAITHUONG_UPDATE";
+
+            cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", parameter[0]);
+            cmd.Parameters.Add("@p_NGAYLAP", parameter[1]);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public DataRow GetByMaCoCauGiaiThuong(string maCoCauGiaiThuong)
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            DataTable dataTable = new DataTable();
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.connection;
+            cmd.CommandText = @"COCAUGIAITHUONG_SEARCHBYMACOCAUGIAITHUONG";
+
+            cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", maCoCauGiaiThuong);
+
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
+
+            adapter.Fill(dataTable);
+
+            connection.Close();
+
+            if (dataTable.Rows.Count > 0)
+                return dataTable.Rows[0];
+            else
+                return null;
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace PresentationLayer.Dialogs
 
             try
             {
-                this.loaiVe = this.loaiVeBUS.GetLoaiVe_ByMaLoaiVe(maLoaiVe);
+                this.loaiVe = this.loaiVeBUS.GetLoaiVeByMaLoaiVe(maLoaiVe);
             }
             catch (Exception ex)
             {
@@ -59,11 +59,11 @@ namespace PresentationLayer.Dialogs
                 this.textEdit_MenhGia.Text = ((int)this.loaiVe.MenhGia).ToString();
             }
 
-            this.Fill_CTPhatHanh();
-            this.Fill_MaCCGT();
+            this.FillCTPhatHanh();
+            this.FillMaCCGT();
         }
 
-        private void Fill_CTPhatHanh()
+        private void FillCTPhatHanh()
         {
             DataTable dataTable = this.doiTacBUS.GetAll_CT();
 
@@ -91,7 +91,7 @@ namespace PresentationLayer.Dialogs
             }
         }
 
-        private void Fill_MaCCGT()
+        private void FillMaCCGT()
         {
             DataTable dataTable = this.coCauGiaiThuongBUS.GetAll();
 

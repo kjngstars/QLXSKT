@@ -42,11 +42,9 @@ namespace PresentationLayer
 
         private void toolStripMenuItem_CapNhat_Click(object sender, EventArgs e)
         {
-            int[] selectedRows = this.gridView.GetSelectedRows();
-
-            if (selectedRows.Length > 0)
+            if (this.gridView.FocusedRowHandle >= 0)
             {
-                string maLoaiVe = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
+                string maLoaiVe = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)["MALOAIVE"].ToString();
 
                 FormEditLoaiVe form = new FormEditLoaiVe(maLoaiVe);
                 if (form.DialogResult != DialogResult.Abort)
@@ -59,11 +57,9 @@ namespace PresentationLayer
 
         private void gridView_DoubleClick(object sender, EventArgs e)
         {
-            int[] selectedRows = this.gridView.GetSelectedRows();
-
-            if (selectedRows.Length > 0)
+            if (this.gridView.FocusedRowHandle >=0)
             {
-                string maLoaiVe = this.gridView.GetDataRow(selectedRows[0])[0].ToString();
+                string maLoaiVe = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)["MALOAIVE"].ToString();
 
                 FormEditLoaiVe form = new FormEditLoaiVe(maLoaiVe);
                 if (form.DialogResult != DialogResult.Abort)

@@ -42,6 +42,7 @@
     <Compile Include="CoCauGiaiThuongDAL.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DoiTacDAL.cs" />
+    <Compile Include="GiaiThuongDAL.cs" />
     <Compile Include="LoaiVeDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

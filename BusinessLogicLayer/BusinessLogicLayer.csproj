@@ -44,6 +44,7 @@
     <Compile Include="CoCauGiaiThuongBUS.cs" />
     <Compile Include="DoiTac.cs" />
     <Compile Include="DoiTacBUS.cs" />
+    <Compile Include="GiaiThuongBUS.cs" />
     <Compile Include="LoaiVe.cs" />
     <Compile Include="LoaiVeBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

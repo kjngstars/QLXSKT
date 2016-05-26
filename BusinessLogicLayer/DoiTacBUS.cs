@@ -19,7 +19,7 @@ namespace BusinessLogicLayer
 
         public DataTable GetAll_CT()
         {
-            return this.doiTacDAL.GetAll_CT();
+            return this.doiTacDAL.GetAllCT();
         }
     }
 }

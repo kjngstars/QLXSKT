@@ -51,9 +51,9 @@ namespace BusinessLogicLayer
             this.loaiVeDAL.Update(parameter);
         }
 
-        public LoaiVe GetLoaiVe_ByMaLoaiVe(string maLoaiVe)
+        public LoaiVe GetLoaiVeByMaLoaiVe(string maLoaiVe)
         {
-            DataRow dataRow = this.loaiVeDAL.GetLoaiVe_ByMaLoaiVe(maLoaiVe);
+            DataRow dataRow = this.loaiVeDAL.GetLoaiVeByMaLoaiVe(maLoaiVe);
 
             return new LoaiVe(
                 dataRow["MALOAIVE"].ToString(),
