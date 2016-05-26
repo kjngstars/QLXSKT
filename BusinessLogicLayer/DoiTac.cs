@@ -20,8 +20,8 @@ namespace BusinessLogicLayer
 
         public DoiTac(DataRow row)
         {
-            this.MaDoiTac = row[0].ToString();
-            this.TenDoiTac = row[1].ToString();
+            this.MaDoiTac = row["MADOITAC"].ToString();
+            this.TenDoiTac = row["TENDOITAC"].ToString();
         }
 
         public override string ToString()

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BusinessLogicLayer;
-using PresentationLayer.Dialog;
+using PresentationLayer.Dialogs;
 
 namespace PresentationLayer
 {
@@ -30,13 +30,6 @@ namespace PresentationLayer
         private void FormDanhSachLoaiVe_Shown(object sender, EventArgs e)
         {
             this.gridControl.DataSource = this.loaiVeBUS.GetAll();
-
-            this.gridView.Columns[0].Caption = "Mã Loại Vé";
-            this.gridView.Columns[1].Caption = "Tên Loại Vé";
-            this.gridView.Columns[2].Caption = "Ngày Lập";
-            this.gridView.Columns[3].Caption = "Mệnh Giá";
-            this.gridView.Columns[4].Caption = "Công Ty Phát Hành";
-            this.gridView.Columns[5].Caption = "Mã Cơ Cấu Giải Thưởng";
         }
 
         private void toolStripMenuItem_Them_Click(object sender, EventArgs e)

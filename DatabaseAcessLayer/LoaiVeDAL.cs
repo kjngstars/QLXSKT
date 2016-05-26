@@ -22,25 +22,31 @@ namespace DatabaseAcessLayer
             return this.getTable(query, string.Empty);
         }
 
-        public void Insert(string[] parameter)
+        public string Insert(string[] parameter)
         {
             if (connection.State != ConnectionState.Open)
                 connection.Open();
 
             SqlCommand cmd = new SqlCommand();
+
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = this.connection;
-            cmd.CommandText = "LOAIVE_INSERT";
+            cmd.CommandText = @"LOAIVE_INSERT";
 
+            cmd.Parameters.Add("@p_MALOAIVE", SqlDbType.VarChar, 15);
+            cmd.Parameters["@p_MALOAIVE"].Direction= ParameterDirection.Output;
             cmd.Parameters.Add("@p_TENLOAIVE", parameter[0]);
             cmd.Parameters.Add("@p_NGAYLAP", parameter[1]);
             cmd.Parameters.Add("@p_MENHGIA", parameter[2]);
             cmd.Parameters.Add("@p_MADOITAC", parameter[3]);
             cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", parameter[4]);
 
+
             cmd.ExecuteNonQuery();
 
             connection.Close();
+
+            return cmd.Parameters["@p_MALOAIVE"].Value.ToString();
         }
 
         public void Update(string[] parameter)
@@ -51,7 +57,7 @@ namespace DatabaseAcessLayer
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = this.connection;
-            cmd.CommandText = "LOAIVE_UPDATE";
+            cmd.CommandText = @"LOAIVE_UPDATE";
 
             cmd.Parameters.Add("@p_MALOAIVE", parameter[0]);
             cmd.Parameters.Add("@p_TENLOAIVE", parameter[1]);
@@ -75,7 +81,7 @@ namespace DatabaseAcessLayer
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = this.connection;
-            cmd.CommandText = "LOAIVE_SEARCHBYMALOAIVE";
+            cmd.CommandText = @"LOAIVE_SEARCHBYMALOAIVE";
 
             cmd.Parameters.Add("@p_MALOAIVE", maLoaiVe);
 

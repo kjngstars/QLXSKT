@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BusinessLogicLayer;
 
-namespace PresentationLayer.Dialog
+namespace PresentationLayer.Dialogs
 {
     public partial class FormEditLoaiVe : DevExpress.XtraEditors.XtraForm
     {
@@ -67,7 +67,7 @@ namespace PresentationLayer.Dialog
         {
             DataTable dataTable = this.doiTacBUS.GetAll_CT();
 
-            DoiTac ct = new DoiTac(null, "Công Ty");
+            DoiTac ct = new DoiTac(null, "Công ty");
             this.comboBoxEdit_CTPhatHanh.Properties.Items.Add(ct);
 
             foreach (DataRow row in dataTable.Rows)
@@ -130,7 +130,7 @@ namespace PresentationLayer.Dialog
                         ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
                         this.comboBoxEdit_MaCCGT.Text);
 
-                    this.loaiVeBUS.Insert(this.loaiVe);
+                    this.loaiVe.MaLoaiVe = this.loaiVeBUS.Insert(this.loaiVe);
 
                     this.DialogResult = DialogResult.OK;
 
@@ -138,6 +138,8 @@ namespace PresentationLayer.Dialog
                 }
                 catch (Exception ex)
                 {
+                    this.loaiVe = null;
+
                     XtraMessageBox.Show(ex.Message);
                 }
             }

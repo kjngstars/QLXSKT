@@ -55,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\FormEditCCGT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FormEditCCGT.Designer.cs">
+      <DependentUpon>FormEditCCGT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\FormEditLoaiVe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialogs\FormEditLoaiVe.Designer.cs">
       <DependentUpon>FormEditLoaiVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDanhSachCCGT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDanhSachCCGT.Designer.cs">
+      <DependentUpon>FormDanhSachCCGT.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDanhSachLoaiVe.cs">
       <SubType>Form</SubType>
@@ -75,8 +87,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\FormEditCCGT.resx">
+      <DependentUpon>FormEditCCGT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FormEditLoaiVe.resx">
       <DependentUpon>FormEditLoaiVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachCCGT.resx">
+      <DependentUpon>FormDanhSachCCGT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDanhSachLoaiVe.resx">
       <DependentUpon>FormDanhSachLoaiVe.cs</DependentUpon>
@@ -179,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

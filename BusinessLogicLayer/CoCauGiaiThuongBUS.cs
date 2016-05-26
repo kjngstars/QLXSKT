@@ -21,5 +21,10 @@ namespace BusinessLogicLayer
         {
             return this.coCauGiaiThuongDAL.GetAll();
         }
+
+        public string Insert(CoCauGiaiThuong coCauGiaiThuong)
+        {
+            return this.coCauGiaiThuongDAL.Insert(coCauGiaiThuong.NgayLap);
+        }
     }
 }

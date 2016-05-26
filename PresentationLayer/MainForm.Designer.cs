@@ -216,6 +216,7 @@
             this.barButtonItem_DanhSachCCGT.Id = 14;
             this.barButtonItem_DanhSachCCGT.LargeGlyph = global::PresentationLayer.Properties.Resources.DanhSachCCGT;
             this.barButtonItem_DanhSachCCGT.Name = "barButtonItem_DanhSachCCGT";
+            this.barButtonItem_DanhSachCCGT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_DanhSachCCGT_ItemClick);
             // 
             // barButtonItem_ThemCCGT
             // 
@@ -223,6 +224,7 @@
             this.barButtonItem_ThemCCGT.Id = 15;
             this.barButtonItem_ThemCCGT.LargeGlyph = global::PresentationLayer.Properties.Resources.ThemCCGT;
             this.barButtonItem_ThemCCGT.Name = "barButtonItem_ThemCCGT";
+            this.barButtonItem_ThemCCGT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_ThemCCGT_ItemClick);
             // 
             // barButtonItem_KeHoachPhatHanh
             // 

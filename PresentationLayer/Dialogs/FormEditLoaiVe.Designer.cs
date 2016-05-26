@@ -1,4 +1,4 @@
-﻿namespace PresentationLayer.Dialog
+﻿namespace PresentationLayer.Dialogs
 {
     partial class FormEditLoaiVe
     {
@@ -108,8 +108,11 @@
             this.textEdit_MenhGia.Name = "textEdit_MenhGia";
             this.textEdit_MenhGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.textEdit_MenhGia.Properties.Appearance.Options.UseFont = true;
-            this.textEdit_MenhGia.Properties.Mask.EditMask = "c0";
-            this.textEdit_MenhGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEdit_MenhGia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit_MenhGia.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit_MenhGia.Properties.Mask.EditMask = "\\d+";
+            this.textEdit_MenhGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.textEdit_MenhGia.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.textEdit_MenhGia.Properties.MaxLength = 10;
             this.textEdit_MenhGia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit_MenhGia.Size = new System.Drawing.Size(250, 26);
@@ -206,8 +209,10 @@
             this.Controls.Add(this.labelControl_NgayLap);
             this.Controls.Add(this.textEdit_TenLoaiVe);
             this.Controls.Add(this.labelControl_TenLoaiVe);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "FormEditLoaiVe";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Loại Vé";
             this.Load += new System.EventHandler(this.FormEditLoaiVe_Load);

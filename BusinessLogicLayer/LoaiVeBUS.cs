@@ -24,7 +24,7 @@ namespace BusinessLogicLayer
         }
 
 
-        public void Insert(LoaiVe loaiVe)
+        public string Insert(LoaiVe loaiVe)
         {
             string[] parameter = new string[5];
 
@@ -34,7 +34,7 @@ namespace BusinessLogicLayer
             parameter[3] = loaiVe.MaDoiTac;
             parameter[4] = loaiVe.MaCoCauGiaiThuong;
 
-            this.loaiVeDAL.Insert(parameter);
+            return this.loaiVeDAL.Insert(parameter);
         }
 
         public void Update(LoaiVe loaiVe)
