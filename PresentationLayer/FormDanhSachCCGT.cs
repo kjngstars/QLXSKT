@@ -24,7 +24,7 @@ namespace PresentationLayer
 
         private void FormDanhSachCCGT_Load(object sender, EventArgs e)
         {
-            this.coCauGiaiThuongBUS=new CoCauGiaiThuongBUS();
+            this.coCauGiaiThuongBUS = new CoCauGiaiThuongBUS();
         }
 
         private void FormDanhSachCCGT_Shown(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace PresentationLayer
         {
             if (this.gridView.FocusedRowHandle >= 0)
             {
-                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)[0].ToString();
+                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)["MACOCAUGIAITHUONG"].ToString();
 
                 FormEditCCGT form = new FormEditCCGT(maCoCauGiaiThuong);
                 if (form.DialogResult != DialogResult.Abort)
@@ -57,13 +57,34 @@ namespace PresentationLayer
         {
             if (this.gridView.FocusedRowHandle >= 0)
             {
-                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)[0].ToString();
+                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)["MACOCAUGIAITHUONG"].ToString();
 
                 FormEditCCGT form = new FormEditCCGT(maCoCauGiaiThuong);
                 if (form.DialogResult != DialogResult.Abort)
                 {
                     form.ShowDialog();
                     this.gridControl.DataSource = this.coCauGiaiThuongBUS.GetAll();
+                }
+            }
+        }
+
+        private void toolStripMenuItem_Xoa_Click(object sender, EventArgs e)
+        {
+            if (this.gridView.FocusedRowHandle >= 0)
+            {
+                string maCoCauGiaiThuong = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)["MACOCAUGIAITHUONG"].ToString();
+
+                try
+                {
+                    this.coCauGiaiThuongBUS.Delete(maCoCauGiaiThuong);
+
+                    this.gridControl.DataSource = this.coCauGiaiThuongBUS.GetAll();
+
+                    XtraMessageBox.Show(@"Xóa Thành Công", @"Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

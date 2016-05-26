@@ -50,7 +50,7 @@ namespace PresentationLayer.Dialogs
             {
                 this.DialogResult = DialogResult.Abort;
 
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -174,7 +174,7 @@ namespace PresentationLayer.Dialogs
             {
                 this.loaiVe = null;
 
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -201,7 +201,7 @@ namespace PresentationLayer.Dialogs
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

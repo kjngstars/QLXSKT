@@ -282,6 +282,7 @@
             this.ribbonPageGroup_TaiKhoan.ItemLinks.Add(this.barButtonItem_DangXuat);
             this.ribbonPageGroup_TaiKhoan.ItemLinks.Add(this.barButtonItem_DoiMatKhau);
             this.ribbonPageGroup_TaiKhoan.Name = "ribbonPageGroup_TaiKhoan";
+            this.ribbonPageGroup_TaiKhoan.ShowCaptionButton = false;
             this.ribbonPageGroup_TaiKhoan.Text = "Tài Khoản";
             // 
             // ribbonPageGroup_Khac
@@ -289,6 +290,7 @@
             this.ribbonPageGroup_Khac.ItemLinks.Add(this.barButtonItem_ThayDoiQuyDinh);
             this.ribbonPageGroup_Khac.ItemLinks.Add(this.barButtonItem_Thoat);
             this.ribbonPageGroup_Khac.Name = "ribbonPageGroup_Khac";
+            this.ribbonPageGroup_Khac.ShowCaptionButton = false;
             this.ribbonPageGroup_Khac.Text = "Khác";
             // 
             // ribbonPage_QuanLyDoiTac
@@ -304,6 +306,7 @@
             this.ribbonPageGroup_DoiTac.ItemLinks.Add(this.barButtonItem_DanhSachDoiTac);
             this.ribbonPageGroup_DoiTac.ItemLinks.Add(this.barButtonItem_TiepNhanDoiTac);
             this.ribbonPageGroup_DoiTac.Name = "ribbonPageGroup_DoiTac";
+            this.ribbonPageGroup_DoiTac.ShowCaptionButton = false;
             this.ribbonPageGroup_DoiTac.Text = "Đối Tác";
             // 
             // ribbonPageGroup_Phieu
@@ -313,6 +316,7 @@
             this.ribbonPageGroup_Phieu.ItemLinks.Add(this.barButtonItem_PhieuTraVe);
             this.ribbonPageGroup_Phieu.ItemLinks.Add(this.barButtonItem_PhieuThanhToan);
             this.ribbonPageGroup_Phieu.Name = "ribbonPageGroup_Phieu";
+            this.ribbonPageGroup_Phieu.ShowCaptionButton = false;
             this.ribbonPageGroup_Phieu.Text = "Phiếu";
             // 
             // ribbonPage_QuanLyLoaiVe
@@ -328,6 +332,7 @@
             this.ribbonPageGroup_LoaiVe.ItemLinks.Add(this.barButtonItem_DanhSachLoaiVe);
             this.ribbonPageGroup_LoaiVe.ItemLinks.Add(this.barButtonItem_ThemLoaiVe);
             this.ribbonPageGroup_LoaiVe.Name = "ribbonPageGroup_LoaiVe";
+            this.ribbonPageGroup_LoaiVe.ShowCaptionButton = false;
             this.ribbonPageGroup_LoaiVe.Text = "Loại Vé";
             // 
             // ribbonPageGroup_CoCauGiaiThuong
@@ -335,6 +340,7 @@
             this.ribbonPageGroup_CoCauGiaiThuong.ItemLinks.Add(this.barButtonItem_DanhSachCCGT);
             this.ribbonPageGroup_CoCauGiaiThuong.ItemLinks.Add(this.barButtonItem_ThemCCGT);
             this.ribbonPageGroup_CoCauGiaiThuong.Name = "ribbonPageGroup_CoCauGiaiThuong";
+            this.ribbonPageGroup_CoCauGiaiThuong.ShowCaptionButton = false;
             this.ribbonPageGroup_CoCauGiaiThuong.Text = "Cơ Cấu Giải Thưởng";
             // 
             // ribbonPage_KeHoach
@@ -350,6 +356,7 @@
             this.ribbonPageGroup_DanhSachKeHoach.ItemLinks.Add(this.barButtonItem_KeHoachPhatHanh);
             this.ribbonPageGroup_DanhSachKeHoach.ItemLinks.Add(this.barButtonItem_KeHoachPhanPhoi);
             this.ribbonPageGroup_DanhSachKeHoach.Name = "ribbonPageGroup_DanhSachKeHoach";
+            this.ribbonPageGroup_DanhSachKeHoach.ShowCaptionButton = false;
             this.ribbonPageGroup_DanhSachKeHoach.Text = "Danh Sách Kế Hoạch";
             // 
             // ribbonPageGroup_LapKeHoach
@@ -357,6 +364,7 @@
             this.ribbonPageGroup_LapKeHoach.ItemLinks.Add(this.barButtonItem_LapKeHoachPhatHanh);
             this.ribbonPageGroup_LapKeHoach.ItemLinks.Add(this.barButtonItem_LapKeHoachPhanPhoi);
             this.ribbonPageGroup_LapKeHoach.Name = "ribbonPageGroup_LapKeHoach";
+            this.ribbonPageGroup_LapKeHoach.ShowCaptionButton = false;
             this.ribbonPageGroup_LapKeHoach.Text = "Lập Kế Hoạch";
             // 
             // ribbonPage_KetQuaXoSo
@@ -371,6 +379,7 @@
             this.ribbonPageGroup_KetQuaXoSo.ItemLinks.Add(this.barButtonItem_GhiNhanKQXS);
             this.ribbonPageGroup_KetQuaXoSo.ItemLinks.Add(this.barButtonItem_TraCuuKQXS);
             this.ribbonPageGroup_KetQuaXoSo.Name = "ribbonPageGroup_KetQuaXoSo";
+            this.ribbonPageGroup_KetQuaXoSo.ShowCaptionButton = false;
             this.ribbonPageGroup_KetQuaXoSo.Text = "Kết Quả Xổ Số";
             // 
             // ribbonPage_BaoCao

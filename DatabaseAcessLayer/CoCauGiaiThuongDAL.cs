@@ -58,6 +58,23 @@ namespace DatabaseAcessLayer
             connection.Close();
         }
 
+        public void Delete(string maCoCauGiaiThuong)
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.connection;
+            cmd.CommandText = @"COCAUGIAITHUONG_DELETE";
+
+            cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", maCoCauGiaiThuong);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
         public DataRow GetByMaCoCauGiaiThuong(string maCoCauGiaiThuong)
         {
             if (connection.State != ConnectionState.Open)

@@ -81,7 +81,7 @@
             this.repositoryItemDateEdit});
             this.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl.ShowToolbarCustomizeItem = false;
-            this.ribbonControl.Size = new System.Drawing.Size(784, 120);
+            this.ribbonControl.Size = new System.Drawing.Size(784, 119);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // barEditItem_NgayLap
@@ -165,7 +165,7 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl.Location = new System.Drawing.Point(0, 120);
+            this.gridControl.Location = new System.Drawing.Point(0, 119);
             this.gridControl.MainView = this.gridView;
             this.gridControl.MenuManager = this.ribbonControl;
             this.gridControl.Name = "gridControl";
@@ -227,6 +227,7 @@
             // 
             this.TRIGIA.Caption = "Trị Giá";
             this.TRIGIA.ColumnEdit = this.repositoryItemTextEdit_TriGia;
+            this.TRIGIA.DisplayFormat.FormatString = "c0";
             this.TRIGIA.FieldName = "TRIGIA";
             this.TRIGIA.Name = "TRIGIA";
             this.TRIGIA.Visible = true;

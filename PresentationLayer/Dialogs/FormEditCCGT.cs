@@ -50,7 +50,7 @@ namespace PresentationLayer.Dialogs
             {
                 this.DialogResult = DialogResult.Abort;
 
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,7 +150,7 @@ namespace PresentationLayer.Dialogs
             {
                 this.coCauGiaiThuong = null;
 
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -183,7 +183,7 @@ namespace PresentationLayer.Dialogs
                     }
                     catch (Exception ex)
                     {
-                        XtraMessageBox.Show(ex.Message);
+                        XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 for (int i = 0; i < this.gridView.RowCount; i++)
@@ -199,7 +199,7 @@ namespace PresentationLayer.Dialogs
                     }
                     catch (Exception ex)
                     {
-                        XtraMessageBox.Show(ex.Message);
+                        XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
@@ -209,7 +209,7 @@ namespace PresentationLayer.Dialogs
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(ex.Message);
+                XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
