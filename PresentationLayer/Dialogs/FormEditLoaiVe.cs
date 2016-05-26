@@ -186,12 +186,12 @@ namespace PresentationLayer.Dialogs
             try
             {
                 this.loaiVe = new LoaiVe(
-                    this.loaiVe.MaLoaiVe,
-                    this.textEdit_TenLoaiVe.Text,
-                    this.dateEdit_NgayLap.Text,
-                    decimal.Parse(this.textEdit_MenhGia.Text),
-                    ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
-                    this.comboBoxEdit_MaCCGT.Text);
+                       this.loaiVe.MaLoaiVe,
+                       this.textEdit_TenLoaiVe.Text,
+                       this.dateEdit_NgayLap.Text,
+                       decimal.Parse(this.textEdit_MenhGia.EditValue.ToString()),
+                       ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
+                       this.comboBoxEdit_MaCCGT.Text);
 
                 this.loaiVeBUS.Update(this.loaiVe);
 

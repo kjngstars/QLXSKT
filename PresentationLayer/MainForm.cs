@@ -26,7 +26,7 @@ namespace PresentationLayer
         /// </summary>
         public bool CheckExist(XtraForm form)
         {
-            foreach(XtraForm child in this.xtraTabbedMdiManager.FloatForms)
+            foreach(XtraForm child in this.MdiChildren)
             {
                 if (form.Name == child.Name)
                 {
