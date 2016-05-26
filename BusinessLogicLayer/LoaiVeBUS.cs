@@ -51,6 +51,11 @@ namespace BusinessLogicLayer
             this.loaiVeDAL.Update(parameter);
         }
 
+        public void Delete(string maLoaiVe)
+        {
+            this.loaiVeDAL.Delete(maLoaiVe);
+        }
+
         public LoaiVe GetLoaiVeByMaLoaiVe(string maLoaiVe)
         {
             DataRow dataRow = this.loaiVeDAL.GetLoaiVeByMaLoaiVe(maLoaiVe);

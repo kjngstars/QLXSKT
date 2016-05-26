@@ -160,7 +160,7 @@ namespace PresentationLayer.Dialogs
                     string.Empty,
                     this.textEdit_TenLoaiVe.Text,
                     this.dateEdit_NgayLap.Text,
-                    decimal.Parse(this.textEdit_MenhGia.Text),
+                    decimal.Parse(this.textEdit_MenhGia.EditValue.ToString()),
                     ((DoiTac)this.comboBoxEdit_CTPhatHanh.SelectedItem).MaDoiTac,
                     this.comboBoxEdit_MaCCGT.Text);
 
@@ -168,7 +168,7 @@ namespace PresentationLayer.Dialogs
 
                 this.DialogResult = DialogResult.OK;
 
-                XtraMessageBox.Show("Thêm Thành Công");
+                XtraMessageBox.Show("Thêm Thành Công", @"Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -197,7 +197,7 @@ namespace PresentationLayer.Dialogs
 
                 this.DialogResult = DialogResult.OK;
 
-                XtraMessageBox.Show("Cập Nhật Thành Công");
+                XtraMessageBox.Show("Cập Nhật Thành Công", @"Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

@@ -69,5 +69,22 @@ namespace PresentationLayer
                 }
             }
         }
+
+        private void toolStripMenuItem_Xoa_Click(object sender, EventArgs e)
+        {
+            if (this.gridView.FocusedRowHandle >= 0)
+            {
+                string maLoaiVe = this.gridView.GetDataRow(this.gridView.FocusedRowHandle)["MALOAIVE"].ToString();
+
+                try
+                {
+                    this.loaiVeBUS.Delete(maLoaiVe);
+                }
+                catch(Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message, @"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

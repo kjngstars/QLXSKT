@@ -70,6 +70,25 @@ namespace DatabaseAcessLayer
             connection.Close();
         }
 
+        public void Delete(string maLoaiVe)
+        {
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            DataTable dataTable = new DataTable();
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = this.connection;
+            cmd.CommandText = @"LOAIVE_DELETE";
+
+            cmd.Parameters.Add("@@p_MALOAIVE", maLoaiVe);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
         public DataRow GetLoaiVeByMaLoaiVe(string maLoaiVe)
         {
             if (connection.State != ConnectionState.Open)

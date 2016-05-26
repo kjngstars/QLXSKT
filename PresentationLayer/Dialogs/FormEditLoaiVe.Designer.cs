@@ -103,17 +103,20 @@
             // 
             // textEdit_MenhGia
             // 
-            this.textEdit_MenhGia.EditValue = "10000";
+            this.textEdit_MenhGia.EditValue = "";
             this.textEdit_MenhGia.Location = new System.Drawing.Point(122, 157);
             this.textEdit_MenhGia.Name = "textEdit_MenhGia";
             this.textEdit_MenhGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.textEdit_MenhGia.Properties.Appearance.Options.UseFont = true;
+            this.textEdit_MenhGia.Properties.DisplayFormat.FormatString = "c0";
             this.textEdit_MenhGia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEdit_MenhGia.Properties.EditFormat.FormatString = "c0";
             this.textEdit_MenhGia.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEdit_MenhGia.Properties.Mask.EditMask = "\\d+";
-            this.textEdit_MenhGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.textEdit_MenhGia.Properties.Mask.EditMask = "c0";
+            this.textEdit_MenhGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit_MenhGia.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.textEdit_MenhGia.Properties.MaxLength = 10;
+            this.textEdit_MenhGia.Properties.NullText = "0";
             this.textEdit_MenhGia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit_MenhGia.Size = new System.Drawing.Size(250, 26);
             this.textEdit_MenhGia.TabIndex = 6;

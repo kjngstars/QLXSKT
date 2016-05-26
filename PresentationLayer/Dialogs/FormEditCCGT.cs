@@ -144,7 +144,7 @@ namespace PresentationLayer.Dialogs
 
                 this.DialogResult = DialogResult.OK;
 
-                XtraMessageBox.Show("Thêm Thành Công");
+                XtraMessageBox.Show("Thêm Thành Công", @"Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -205,7 +205,7 @@ namespace PresentationLayer.Dialogs
 
                 this.DialogResult = DialogResult.OK;
 
-                XtraMessageBox.Show("Cập Nhật Thành Công");
+                XtraMessageBox.Show("Cập Nhật Thành Công", @"Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

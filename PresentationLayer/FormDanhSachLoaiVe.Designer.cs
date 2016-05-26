@@ -36,11 +36,11 @@
             this.toolStripMenuItem_Xoa = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MALOAIVE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENLOAIVE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MENHGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENDOITAC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MACOCAUGIAITHUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENLOAIVE = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
@@ -65,27 +65,28 @@
             this.toolStripMenuItem_CapNhat,
             this.toolStripMenuItem_Xoa});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(125, 70);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 92);
             // 
             // toolStripMenuItem_Them
             // 
             this.toolStripMenuItem_Them.Name = "toolStripMenuItem_Them";
-            this.toolStripMenuItem_Them.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem_Them.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_Them.Text = "Thêm";
             this.toolStripMenuItem_Them.Click += new System.EventHandler(this.toolStripMenuItem_Them_Click);
             // 
             // toolStripMenuItem_CapNhat
             // 
             this.toolStripMenuItem_CapNhat.Name = "toolStripMenuItem_CapNhat";
-            this.toolStripMenuItem_CapNhat.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem_CapNhat.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_CapNhat.Text = "Cập Nhật";
             this.toolStripMenuItem_CapNhat.Click += new System.EventHandler(this.toolStripMenuItem_CapNhat_Click);
             // 
             // toolStripMenuItem_Xoa
             // 
             this.toolStripMenuItem_Xoa.Name = "toolStripMenuItem_Xoa";
-            this.toolStripMenuItem_Xoa.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem_Xoa.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_Xoa.Text = "Xóa";
+            this.toolStripMenuItem_Xoa.Click += new System.EventHandler(this.toolStripMenuItem_Xoa_Click);
             // 
             // gridView
             // 
@@ -110,6 +111,14 @@
             this.MALOAIVE.Visible = true;
             this.MALOAIVE.VisibleIndex = 0;
             // 
+            // TENLOAIVE
+            // 
+            this.TENLOAIVE.Caption = "Tên Loại Vé";
+            this.TENLOAIVE.FieldName = "TENLOAIVE";
+            this.TENLOAIVE.Name = "TENLOAIVE";
+            this.TENLOAIVE.Visible = true;
+            this.TENLOAIVE.VisibleIndex = 1;
+            // 
             // NGAYLAP
             // 
             this.NGAYLAP.Caption = "Ngày Lập";
@@ -122,7 +131,7 @@
             // 
             this.MENHGIA.Caption = "Mệnh Giá";
             this.MENHGIA.DisplayFormat.FormatString = "c0";
-            this.MENHGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.MENHGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.MENHGIA.FieldName = "MENHGIA";
             this.MENHGIA.Name = "MENHGIA";
             this.MENHGIA.Visible = true;
@@ -143,14 +152,6 @@
             this.MACOCAUGIAITHUONG.Name = "MACOCAUGIAITHUONG";
             this.MACOCAUGIAITHUONG.Visible = true;
             this.MACOCAUGIAITHUONG.VisibleIndex = 5;
-            // 
-            // TENLOAIVE
-            // 
-            this.TENLOAIVE.Caption = "Tên Loại Vé";
-            this.TENLOAIVE.FieldName = "TENLOAIVE";
-            this.TENLOAIVE.Name = "TENLOAIVE";
-            this.TENLOAIVE.Visible = true;
-            this.TENLOAIVE.VisibleIndex = 1;
             // 
             // FormDanhSachLoaiVe
             // 

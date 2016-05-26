@@ -53,9 +53,9 @@ namespace DatabaseAcessLayer
             cmd.Parameters.Add("@p_TENGIAITHUONG", parameter[1]);
             cmd.Parameters.Add("@p_MACOCAUGIAITHUONG", parameter[2]);
             cmd.Parameters.Add("@p_TRIGIA", parameter[3]);
-            cmd.Parameters.Add("@p_NGAYLAP", parameter[4]);
-            cmd.Parameters.Add("@p_NGAYLAP", parameter[5]);
-            cmd.Parameters.Add("@p_NGAYLAP", parameter[6]);
+            cmd.Parameters.Add("@p_SOLUONG", parameter[4]);
+            cmd.Parameters.Add("@p_SOCHUSOTRUNG", parameter[5]);
+            cmd.Parameters.Add("@p_SOLANQUAY", parameter[6]);
 
             cmd.ExecuteNonQuery();
 

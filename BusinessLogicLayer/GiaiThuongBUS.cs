@@ -26,12 +26,13 @@ namespace BusinessLogicLayer
             parameter[2] = giaiThuong.TriGia.ToString();
             parameter[3] = giaiThuong.SoLuong.ToString();
             parameter[4] = giaiThuong.SoChuSoTrung.ToString();
-            parameter[5] = giaiThuong.SoLanQuay.ToString();
+            if (giaiThuong.SoLanQuay != 0)
+                parameter[5] = giaiThuong.SoLanQuay.ToString();
 
             return this.giaiThuongDAL.Insert(parameter);
         }
 
-        public string Update(GiaiThuong giaiThuong)
+        public void Update(GiaiThuong giaiThuong)
         {
             string[] parameter = new string[7];
 
@@ -41,9 +42,10 @@ namespace BusinessLogicLayer
             parameter[3] = giaiThuong.TriGia.ToString();
             parameter[4] = giaiThuong.SoLuong.ToString();
             parameter[5] = giaiThuong.SoChuSoTrung.ToString();
-            parameter[6] = giaiThuong.SoLanQuay.ToString();
+            if (giaiThuong.SoLanQuay != 0)
+                parameter[6] = giaiThuong.SoLanQuay.ToString();
 
-            return this.giaiThuongDAL.Insert(parameter);
+            this.giaiThuongDAL.Update(parameter);
         }
 
         public void Delete(string maGiaiThuong)

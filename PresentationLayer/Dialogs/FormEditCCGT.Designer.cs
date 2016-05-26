@@ -81,7 +81,7 @@
             this.repositoryItemDateEdit});
             this.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl.ShowToolbarCustomizeItem = false;
-            this.ribbonControl.Size = new System.Drawing.Size(784, 119);
+            this.ribbonControl.Size = new System.Drawing.Size(784, 120);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // barEditItem_NgayLap
@@ -165,7 +165,7 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl.Location = new System.Drawing.Point(0, 119);
+            this.gridControl.Location = new System.Drawing.Point(0, 120);
             this.gridControl.MainView = this.gridView;
             this.gridControl.MenuManager = this.ribbonControl;
             this.gridControl.Name = "gridControl";
@@ -228,6 +228,7 @@
             this.TRIGIA.Caption = "Trị Giá";
             this.TRIGIA.ColumnEdit = this.repositoryItemTextEdit_TriGia;
             this.TRIGIA.DisplayFormat.FormatString = "c0";
+            this.TRIGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.TRIGIA.FieldName = "TRIGIA";
             this.TRIGIA.Name = "TRIGIA";
             this.TRIGIA.Visible = true;
@@ -238,10 +239,9 @@
             this.repositoryItemTextEdit_TriGia.AutoHeight = false;
             this.repositoryItemTextEdit_TriGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit_TriGia.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEdit_TriGia.Mask.EditMask = "\\d+";
-            this.repositoryItemTextEdit_TriGia.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.repositoryItemTextEdit_TriGia.Mask.EditMask = "c0";
+            this.repositoryItemTextEdit_TriGia.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit_TriGia.Mask.UseMaskAsDisplayFormat = true;
-            this.repositoryItemTextEdit_TriGia.MaxLength = 10;
             this.repositoryItemTextEdit_TriGia.Name = "repositoryItemTextEdit_TriGia";
             this.repositoryItemTextEdit_TriGia.NullText = "0";
             // 
