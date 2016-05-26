@@ -79,6 +79,10 @@ namespace PresentationLayer
                 try
                 {
                     this.loaiVeBUS.Delete(maLoaiVe);
+
+                    this.gridControl.DataSource = this.loaiVeBUS.GetAll();
+
+                    XtraMessageBox.Show(@"Xóa Thành Công", @"Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch(Exception ex)
                 {

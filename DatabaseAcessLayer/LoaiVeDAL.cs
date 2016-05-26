@@ -82,7 +82,7 @@ namespace DatabaseAcessLayer
             cmd.Connection = this.connection;
             cmd.CommandText = @"LOAIVE_DELETE";
 
-            cmd.Parameters.Add("@@p_MALOAIVE", maLoaiVe);
+            cmd.Parameters.Add("@p_MALOAIVE", maLoaiVe);
 
             cmd.ExecuteNonQuery();
 
